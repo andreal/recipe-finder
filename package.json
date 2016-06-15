@@ -1,6 +1,6 @@
 {
-  "name": "newCalculator",
-  "description": "Calculator app",
+  "name": "recipeFinder",
+  "description": "Recipe Finder app",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
