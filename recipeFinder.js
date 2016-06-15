@@ -16,7 +16,7 @@ var recipeFinder = function() {
 			},
 			type: 'GET',			
 			url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients",
-			data: {'fillIngredients' : 'true', 'ingredients' : ingredients, 'limitLicense' : 'true', 'ranking' : '1'},
+			data: {'fillIngredients' : 'true', 'ingredients' : ingredients, 'limitLicense' : 'true', 'number': '6', 'ranking' : '1'},
 			dataType: 'text',
 			settings: ["X-Mashape-Key", "l7YpdDzhoamshuXva1pIFF8QPDRPp11xpC2jsnDsIlvbSdvNpH"],
 			beforeSend: function(xhr) {
