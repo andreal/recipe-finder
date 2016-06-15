@@ -14,11 +14,17 @@
 	</head>
 	<body>
 		<div class="recipeFinder">
-			<h1 class="recipeFinder-header">Recipe Finder</h1>
-			<form class="recipeFinder-search">
-				<input type="text" placeholder="pasta"/>
-				<button type="submit">Search</button>
-			</form>
+			<div class="recipeFinder-top">
+				<h1 class="recipeFinder-header">Recipe Finder</h1>
+				<p class="recipeFinder-disclaimer">The API providing recipes is the Food API provided by spoonacular.com</p>
+				
+				<p class="recipeFinder-instructions">Enter desired ingredients separated by commas. Returned recipes contain between one and all ingredients.</p>
+				<form class="recipeFinder-search" action="">
+					<input type="text" placeholder="pasta" name="ingredient"/>
+					<button type="submit" class="recipeFinder-search-button">Search</button>
+				</form>
+			</div>
+			
 			<div class="recipeFinder-results">
 			</div>
 		</div>

@@ -1,8 +1,69 @@
 .recipeFinder {
+	margin: 0 auto;
+}
+
+.recipeFinder .recipeFinder-top {
+    margin: 0 auto;
+    max-width: 300px;
+    text-align: center;
+}
+
+.recipeFinder .recipeFinder-top .recipeFinder-disclaimer {
+	font-size: 10px;
 }
 
 .recipeFinder .recipeFinder-header {
+	margin: 0 auto;
 }
 
-.recipeFinder .recipeFinder-search {
+.recipeFinder .recipeFinder-search input {
+	height: 25px;
+	font-size: 20px;
+	border-radius: 10px;
+	padding-bottom: 5px;
+	padding-left: 4px;
+}
+
+.recipeFinder .recipeFinder-search button {
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.recipeFinder .recipeFinder-results {
+	position: relative;
+	max-width: 945px;
+	margin: 0 auto;
+}
+
+.recipeFinder .recipeFinder-results-result {
+	width: 300px;
+	height: 300px;
+	text-align: center;
+	border: 2px solid #000000;
+	margin: 10px 10px 10px 0;
+	border-radius: 10px;
+	padding-top: 10px;
+	background-color: #D3D3D3;
+	
+	float: left;
+	position: relative;
+	
+	overflow-y: scroll;
+}
+
+@media (max-width: 955px) {
+	.recipeFinder .recipeFinder-results {
+		width: 700px;
+	}
+}
+
+@media (max-width: 630px) {
+	.recipeFinder .recipeFinder-results {
+		width: 300px;
+	}
+}
+
+.recipeFinder .recipeFinder-results-result .recipeFinder-results-title {
+    max-width: 275px;
+    margin: 10px auto;
 }

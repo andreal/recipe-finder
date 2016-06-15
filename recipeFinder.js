@@ -1,13 +1,22 @@
 var recipeFinder = function() {
 	$(document).ready(function() {
-		console.log("just testing");
+		handleSearch("pasta");
+	});	
+	
+	$(document).find('.recipeFinder-search-button').on('click', function(evt) {
+		evt.preventDefault();
+		var searchInput = $('input[name="ingredient"]').val();
+		handleSearch(searchInput);
+	});
+	
+	var handleSearch = function(ingredients) {
 		$.ajax({
 			accepts: {
 			    json: 'application/json'
 			},
 			type: 'GET',			
 			url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients",
-			data: {'fillIngredients' : 'true', 'ingredients' : "pasta", 'limitLicense' : 'true', 'ranking' : '1'},
+			data: {'fillIngredients' : 'true', 'ingredients' : ingredients, 'limitLicense' : 'true', 'ranking' : '1'},
 			dataType: 'text',
 			settings: ["X-Mashape-Key", "l7YpdDzhoamshuXva1pIFF8QPDRPp11xpC2jsnDsIlvbSdvNpH"],
 			beforeSend: function(xhr) {
@@ -22,8 +31,12 @@ var recipeFinder = function() {
 					var jsonDataElement = jsonData[i];
 					var result = $('<div class="recipeFinder-results-result">');
 					var title = $('<div class="recipeFinder-results-title">').text(jsonDataElement.title);
-					var image = $('<img src="'+ jsonDataElement.image + '" width="100" height="100"/>');
-					var ingredients = $('<div>').text("Ingredients").append('<ul>').append('<li>' + jsonDataElement.usedIngredients[0].name + '</li>');
+					var image = $('<img src="'+ jsonDataElement.image + '" width="125" height="125"/>');
+					var ingredients = $('<div>').text("Ingredients").append('<ul>');
+					
+					for (var x = 0; x < jsonDataElement.usedIngredients.length; x++) {
+						ingredients.append('<li>' + jsonDataElement.usedIngredients[x].name + '</li>');
+					}
 					
 					for (var x = 0; x < jsonDataElement.missedIngredients.length; x++) {
 						ingredients.append('<li>' + jsonDataElement.missedIngredients[x].name + '</li>');
@@ -36,5 +49,5 @@ var recipeFinder = function() {
 				console.log(errorThrown);
 			}
 		});
-	});	
+	}
 }
