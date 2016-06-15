@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="recipeFinder.js"></script>
+		
+		<script type="text/javascript" language="javascript" src="jquery.js"></script>
+		<script type="text/javascript">		
+			$(document).ready(function() {
+				recipeFinder();
+			});
+		</script>
+		 	
+		<link rel="stylesheet" type="text/css" href="recipeFinder.css">	
+	</head>
+	<body>
+		<div class="recipeFinder">
+			<h1 class="recipeFinder-header">Recipe Finder</h1>
+			<form class="recipeFinder-search">
+				<input type="text" placeholder="pasta"/>
+				<button type="submit">Search</button>
+			</form>
+			<div class="recipeFinder-results">
+			</div>
+		</div>
+	</body>
+</html>
