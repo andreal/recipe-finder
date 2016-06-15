@@ -1,6 +1,8 @@
 #Recipe Finder
 #Languages: Javascript, JQuery, a little bit of Node, HTML, CSS
 
+#Web Services Used: The Food API with Spoonacular https://spoonacular.com/food-api
+
 #Description: This app allows the user to search by ingredients, and returns 5 recipes. To search with multiple ingredients, separate ingredients with commas.
 
 #Notes: The API may not return a recipe with all ingredients- it contains between one and all ingredients.
